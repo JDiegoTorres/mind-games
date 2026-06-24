@@ -1,0 +1,16 @@
+{
+  "name": "mind-games",
+  "version": "1.0.0",
+  "description": "Una colección de juegos mentales construida con HTML, CSS y JavaScript vanilla.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["games", "mental", "web"],
+  "author": "Diego Torres",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
