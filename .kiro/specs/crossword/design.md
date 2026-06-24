@@ -25,30 +25,35 @@ Se separan los datos (`puzzles.js`) de la lógica (`crossword.js`) para que aña
 ## Components and Interfaces
 
 ### Componente: PuzzleSelector
+
 - **Responsabilidad:** Elegir un crucigrama aleatorio del banco, sin repetir el anterior
 - **Interfaz:** `selectPuzzle()` → retorna un objeto puzzle
 
 ### Componente: GridBuilder
+
 - **Responsabilidad:** Generar la cuadrícula HTML a partir de los datos del puzzle
 - **Interfaz:** `buildGrid(puzzle)` → crea los elementos DOM del tablero
 
 ### Componente: ClueRenderer
+
 - **Responsabilidad:** Mostrar las pistas organizadas por dirección
 - **Interfaz:** `renderClues(puzzle)` → genera las listas de pistas en el HTML
 
 ### Componente: InputHandler
+
 - **Responsabilidad:** Gestionar la interacción del usuario (clics, teclado)
 - **Interfaz:**
-  - `handleCellClick(cell)` → selecciona celda y resalta palabra
-  - `handleKeyInput(event)` → escribe letras, navega, borra
-  - `toggleDirection()` → cambia entre horizontal y vertical
+    - `handleCellClick(cell)` → selecciona celda y resalta palabra
+    - `handleKeyInput(event)` → escribe letras, navega, borra
+    - `toggleDirection()` → cambia entre horizontal y vertical
 
 ### Componente: GameChecker
+
 - **Responsabilidad:** Validar respuestas y detectar victoria
 - **Interfaz:**
-  - `checkAnswers()` → marca errores en rojo
-  - `revealWord()` → muestra la palabra activa
-  - `checkWin()` → verifica si todo es correcto
+    - `checkAnswers()` → marca errores en rojo
+    - `revealWord()` → muestra la palabra activa
+    - `checkWin()` → verifica si todo es correcto
 
 ## Data Models
 

@@ -1,66 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧩 Crucigrama - Mind Games</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="crossword.css">
-</head>
-<body>
-    <header class="header">
-        <a href="../../index.html" class="back-link">← Volver</a>
-        <h1>🧩 Crucigrama</h1>
-        <p class="theme-label">Temática: <span id="theme-display">---</span></p>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🧩 Crucigrama - Mind Games</title>
+        <link rel="stylesheet" href="../../css/styles.css" />
+        <link rel="stylesheet" href="crossword.css" />
+    </head>
+    <body>
+        <header class="header">
+            <a href="../../index.html" class="back-link">← Volver</a>
+            <h1>🧩 Crucigrama</h1>
+            <p class="theme-label">Temática: <span id="theme-display">---</span></p>
+        </header>
 
-    <section class="game-controls">
-        <button class="btn-action" id="btn-check">✔️ Comprobar</button>
-        <button class="btn-action" id="btn-reveal">💡 Revelar palabra</button>
-        <button class="btn-action" id="btn-new">🔄 Nuevo crucigrama</button>
-    </section>
-
-    <main class="crossword-layout">
-        <section class="crossword-grid-container">
-            <div class="crossword-grid" id="crossword-grid">
-                <!-- La cuadrícula se genera con JavaScript -->
-            </div>
+        <section class="game-controls">
+            <button class="btn-action" id="btn-check">✔️ Comprobar</button>
+            <button class="btn-action" id="btn-reveal">💡 Revelar palabra</button>
+            <button class="btn-action" id="btn-new">🔄 Nuevo crucigrama</button>
         </section>
 
-        <section class="crossword-clues">
-            <div class="clues-group">
-                <h3>Horizontales</h3>
-                <ul class="clues-list" id="clues-horizontal"></ul>
-            </div>
-            <div class="clues-group">
-                <h3>Verticales</h3>
-                <ul class="clues-list" id="clues-vertical"></ul>
-            </div>
-        </section>
-    </main>
+        <main class="crossword-layout">
+            <section class="crossword-grid-container">
+                <div class="crossword-grid" id="crossword-grid">
+                    <!-- La cuadrícula se genera con JavaScript -->
+                </div>
+            </section>
 
-    <div class="win-message" id="win-message" hidden>
-        <h2>🎉 ¡Crucigrama completado!</h2>
-        <p>Has resuelto el crucigrama de <span id="win-theme">---</span></p>
-        <p class="score-display">Puntuación: <span id="win-score">0</span></p>
-        <button class="btn-action" id="btn-play-again">Jugar otro</button>
-    </div>
+            <section class="crossword-clues">
+                <div class="clues-group">
+                    <h3>Horizontales</h3>
+                    <ul class="clues-list" id="clues-horizontal"></ul>
+                </div>
+                <div class="clues-group">
+                    <h3>Verticales</h3>
+                    <ul class="clues-list" id="clues-vertical"></ul>
+                </div>
+            </section>
+        </main>
 
-    <script src="../../js/scoring.js"></script>
-    <script>
-    if (typeof saveScore === 'undefined') {
-        const SCORES_KEY = 'mindgames_scores';
-        const PLAYER_KEY = 'mindgames_player';
-        function getPlayerName() { return localStorage.getItem(PLAYER_KEY); }
-        function saveScore(gameName, score, category, difficulty) {
-            const scores = JSON.parse(localStorage.getItem(SCORES_KEY) || '[]');
-            scores.push({ player: getPlayerName() || 'Anon', game: gameName, score: Math.max(score, 100), category, difficulty, date: new Date().toISOString() });
-            localStorage.setItem(SCORES_KEY, JSON.stringify(scores.slice(-50)));
-        }
-        function calculateCrosswordScore(seconds, revelations) { return Math.max(1000 - (seconds * 2) - (revelations * 200), 100); }
-    }
-    </script>
-    <script src="puzzles.js"></script>
-    <script src="crossword.js"></script>
-</body>
+        <div class="win-message" id="win-message" hidden>
+            <h2>🎉 ¡Crucigrama completado!</h2>
+            <p>Has resuelto el crucigrama de <span id="win-theme">---</span></p>
+            <p class="score-display">Puntuación: <span id="win-score">0</span></p>
+            <button class="btn-action" id="btn-play-again">Jugar otro</button>
+        </div>
+
+        <script src="../../js/scoring.js"></script>
+        <script>
+            if (typeof saveScore === 'undefined') {
+                const SCORES_KEY = 'mindgames_scores';
+                const PLAYER_KEY = 'mindgames_player';
+                function getPlayerName() {
+                    return localStorage.getItem(PLAYER_KEY);
+                }
+                function saveScore(gameName, score, category, difficulty) {
+                    const scores = JSON.parse(localStorage.getItem(SCORES_KEY) || '[]');
+                    scores.push({
+                        player: getPlayerName() || 'Anon',
+                        game: gameName,
+                        score: Math.max(score, 100),
+                        category,
+                        difficulty,
+                        date: new Date().toISOString()
+                    });
+                    localStorage.setItem(SCORES_KEY, JSON.stringify(scores.slice(-50)));
+                }
+                function calculateCrosswordScore(seconds, revelations) {
+                    return Math.max(1000 - seconds * 2 - revelations * 200, 100);
+                }
+            }
+        </script>
+        <script src="puzzles.js"></script>
+        <script src="crossword.js"></script>
+    </body>
 </html>

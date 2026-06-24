@@ -11,11 +11,11 @@ const FLASH_DURATION = 400;
 const FLASH_PAUSE = 200;
 
 // --- ESTADO DEL JUEGO ---
-let sequence = [];        // La secuencia que la máquina genera
-let playerIndex = 0;      // En qué posición va el jugador repitiendo
-let level = 0;            // Nivel actual
-let bestScore = 0;        // Mejor puntuación
-let isPlaying = false;    // ¿El juego está activo?
+let sequence = []; // La secuencia que la máquina genera
+let playerIndex = 0; // En qué posición va el jugador repitiendo
+let level = 0; // Nivel actual
+let bestScore = 0; // Mejor puntuación
+let isPlaying = false; // ¿El juego está activo?
 let isShowingSequence = false; // ¿La máquina está mostrando la secuencia?
 
 // --- ELEMENTOS DEL DOM ---

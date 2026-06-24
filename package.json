@@ -1,16 +1,25 @@
 {
-  "name": "mind-games",
-  "version": "1.0.0",
-  "description": "Una colección de juegos mentales construida con HTML, CSS y JavaScript vanilla.",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "keywords": ["games", "mental", "web"],
-  "author": "Diego Torres",
-  "license": "ISC",
-  "devDependencies": {
-    "vite": "^6.3.5"
-  }
+    "name": "mind-games",
+    "version": "1.0.0",
+    "description": "Una colección de juegos mentales construida con HTML, CSS y JavaScript vanilla.",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "lint": "eslint .",
+        "format": "prettier --write ."
+    },
+    "keywords": [
+        "games",
+        "mental",
+        "web"
+    ],
+    "author": "Diego Torres",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^9.28.0",
+        "eslint-config-prettier": "^10.1.5",
+        "prettier": "^3.5.3",
+        "vite": "^6.3.5"
+    }
 }

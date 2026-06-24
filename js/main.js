@@ -144,9 +144,10 @@ function renderLeaderboard() {
 
     const topScores = scores.slice(0, 10);
 
-    leaderboardBody.innerHTML = topScores.map((score, index) => {
-        const date = new Date(score.date).toLocaleDateString('es-ES');
-        return `
+    leaderboardBody.innerHTML = topScores
+        .map((score, index) => {
+            const date = new Date(score.date).toLocaleDateString('es-ES');
+            return `
             <tr>
                 <td>${index + 1}</td>
                 <td>${score.player}</td>
@@ -155,7 +156,8 @@ function renderLeaderboard() {
                 <td>${date}</td>
             </tr>
         `;
-    }).join('');
+        })
+        .join('');
 }
 
 // --- EVENTOS ---

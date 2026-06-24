@@ -5,7 +5,6 @@
 // ========================================
 
 const PUZZLES = [
-
     // ===================================
     // CRUCIGRAMA 1: Tecnología (8x8)
     // ===================================
@@ -30,20 +29,76 @@ const PUZZLES = [
     // (6,4): NODO[2]=D, RED[2]=D ✓
     //
     {
-        theme: "Tecnología",
+        theme: 'Tecnología',
         size: { rows: 8, cols: 8 },
         words: [
             // Horizontales
-            { word: "CODIGO", row: 0, col: 0, direction: "horizontal", number: 1, clue: "Instrucciones que escribe un programador" },
-            { word: "TECLA", row: 2, col: 2, direction: "horizontal", number: 3, clue: "Botón que se pulsa en un teclado" },
-            { word: "SERVER", row: 4, col: 2, direction: "horizontal", number: 4, clue: "Computadora que ofrece servicios a otras en una red" },
-            { word: "WEB", row: 5, col: 3, direction: "horizontal", number: 6, clue: "La telaraña mundial de Internet" },
-            { word: "NODO", row: 6, col: 2, direction: "horizontal", number: 7, clue: "Punto de conexión en una red" },
+            {
+                word: 'CODIGO',
+                row: 0,
+                col: 0,
+                direction: 'horizontal',
+                number: 1,
+                clue: 'Instrucciones que escribe un programador'
+            },
+            {
+                word: 'TECLA',
+                row: 2,
+                col: 2,
+                direction: 'horizontal',
+                number: 3,
+                clue: 'Botón que se pulsa en un teclado'
+            },
+            {
+                word: 'SERVER',
+                row: 4,
+                col: 2,
+                direction: 'horizontal',
+                number: 4,
+                clue: 'Computadora que ofrece servicios a otras en una red'
+            },
+            {
+                word: 'WEB',
+                row: 5,
+                col: 3,
+                direction: 'horizontal',
+                number: 6,
+                clue: 'La telaraña mundial de Internet'
+            },
+            {
+                word: 'NODO',
+                row: 6,
+                col: 2,
+                direction: 'horizontal',
+                number: 7,
+                clue: 'Punto de conexión en una red'
+            },
 
             // Verticales
-            { word: "CLICK", row: 0, col: 0, direction: "vertical", number: 1, clue: "Acción de pulsar el botón del ratón" },
-            { word: "DATOS", row: 0, col: 2, direction: "vertical", number: 2, clue: "Información que procesa un programa" },
-            { word: "RED", row: 4, col: 4, direction: "vertical", number: 5, clue: "Conjunto de computadoras conectadas" }
+            {
+                word: 'CLICK',
+                row: 0,
+                col: 0,
+                direction: 'vertical',
+                number: 1,
+                clue: 'Acción de pulsar el botón del ratón'
+            },
+            {
+                word: 'DATOS',
+                row: 0,
+                col: 2,
+                direction: 'vertical',
+                number: 2,
+                clue: 'Información que procesa un programa'
+            },
+            {
+                word: 'RED',
+                row: 4,
+                col: 4,
+                direction: 'vertical',
+                number: 5,
+                clue: 'Conjunto de computadoras conectadas'
+            }
         ]
     },
 
@@ -62,22 +117,92 @@ const PUZZLES = [
     // Fila 7: [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
     //
     {
-        theme: "Naturaleza",
+        theme: 'Naturaleza',
         size: { rows: 8, cols: 8 },
         words: [
             // Horizontales
-            { word: "SOL", row: 0, col: 0, direction: "horizontal", number: 1, clue: "Estrella que ilumina la Tierra" },
-            { word: "NUBE", row: 0, col: 4, direction: "horizontal", number: 2, clue: "Masa de vapor de agua en el cielo" },
-            { word: "LANA", row: 2, col: 0, direction: "horizontal", number: 4, clue: "Fibra natural que cubre a las ovejas" },
-            { word: "AGUA", row: 4, col: 0, direction: "horizontal", number: 6, clue: "Líquido vital transparente e inodoro" },
-            { word: "RIO", row: 5, col: 3, direction: "horizontal", number: 7, clue: "Corriente natural de agua dulce" },
-            { word: "MAR", row: 6, col: 2, direction: "horizontal", number: 8, clue: "Gran extensión de agua salada" },
+            {
+                word: 'SOL',
+                row: 0,
+                col: 0,
+                direction: 'horizontal',
+                number: 1,
+                clue: 'Estrella que ilumina la Tierra'
+            },
+            {
+                word: 'NUBE',
+                row: 0,
+                col: 4,
+                direction: 'horizontal',
+                number: 2,
+                clue: 'Masa de vapor de agua en el cielo'
+            },
+            {
+                word: 'LANA',
+                row: 2,
+                col: 0,
+                direction: 'horizontal',
+                number: 4,
+                clue: 'Fibra natural que cubre a las ovejas'
+            },
+            {
+                word: 'AGUA',
+                row: 4,
+                col: 0,
+                direction: 'horizontal',
+                number: 6,
+                clue: 'Líquido vital transparente e inodoro'
+            },
+            {
+                word: 'RIO',
+                row: 5,
+                col: 3,
+                direction: 'horizontal',
+                number: 7,
+                clue: 'Corriente natural de agua dulce'
+            },
+            {
+                word: 'MAR',
+                row: 6,
+                col: 2,
+                direction: 'horizontal',
+                number: 8,
+                clue: 'Gran extensión de agua salada'
+            },
 
             // Verticales
-            { word: "SELVA", row: 0, col: 0, direction: "vertical", number: 1, clue: "Bosque tropical denso y húmedo" },
-            { word: "LUNA", row: 0, col: 2, direction: "vertical", number: 3, clue: "Satélite natural de la Tierra" },
-            { word: "NIDO", row: 0, col: 4, direction: "vertical", number: 2, clue: "Casa que construyen las aves" },
-            { word: "ARAR", row: 2, col: 3, direction: "vertical", number: 5, clue: "Trabajar la tierra para sembrar" }
+            {
+                word: 'SELVA',
+                row: 0,
+                col: 0,
+                direction: 'vertical',
+                number: 1,
+                clue: 'Bosque tropical denso y húmedo'
+            },
+            {
+                word: 'LUNA',
+                row: 0,
+                col: 2,
+                direction: 'vertical',
+                number: 3,
+                clue: 'Satélite natural de la Tierra'
+            },
+            {
+                word: 'NIDO',
+                row: 0,
+                col: 4,
+                direction: 'vertical',
+                number: 2,
+                clue: 'Casa que construyen las aves'
+            },
+            {
+                word: 'ARAR',
+                row: 2,
+                col: 3,
+                direction: 'vertical',
+                number: 5,
+                clue: 'Trabajar la tierra para sembrar'
+            }
         ]
     },
 
@@ -95,7 +220,7 @@ const PUZZLES = [
     // Cruces verificados:
     // (0,0): GIROS[0]=G, GOLES[0]=G ✓
     // (0,4): GIROS[4]=S, SALTO[0]=S ✓
-    // (1,0): GOLES[1]=O, libre (no hay h en fila 1 col 0)... 
+    // (1,0): GOLES[1]=O, libre (no hay h en fila 1 col 0)...
     //        Wait: fila 1 tiene ARCO en cols 4-7. (1,0)=O solo pertenece a GOLES. ✓
     // (1,4): ARCO[0]=A, SALTO[1]=A ✓
     // (2,0): LIGA[0]=L, GOLES[2]=L ✓
@@ -106,18 +231,60 @@ const PUZZLES = [
     // (4,4): SALTO[4]=O, SET no llega a col 4. Solo pertenece a SALTO. ✓
     //
     {
-        theme: "Deportes",
+        theme: 'Deportes',
         size: { rows: 5, cols: 8 },
         words: [
             // Horizontales
-            { word: "GIROS", row: 0, col: 0, direction: "horizontal", number: 1, clue: "Vueltas en patinaje artístico o gimnasia" },
-            { word: "ARCO", row: 1, col: 4, direction: "horizontal", number: 3, clue: "Portería en fútbol" },
-            { word: "LIGA", row: 2, col: 0, direction: "horizontal", number: 4, clue: "Competición donde varios equipos se enfrentan" },
-            { word: "SET", row: 4, col: 0, direction: "horizontal", number: 5, clue: "Parte de un partido de tenis" },
+            {
+                word: 'GIROS',
+                row: 0,
+                col: 0,
+                direction: 'horizontal',
+                number: 1,
+                clue: 'Vueltas en patinaje artístico o gimnasia'
+            },
+            {
+                word: 'ARCO',
+                row: 1,
+                col: 4,
+                direction: 'horizontal',
+                number: 3,
+                clue: 'Portería en fútbol'
+            },
+            {
+                word: 'LIGA',
+                row: 2,
+                col: 0,
+                direction: 'horizontal',
+                number: 4,
+                clue: 'Competición donde varios equipos se enfrentan'
+            },
+            {
+                word: 'SET',
+                row: 4,
+                col: 0,
+                direction: 'horizontal',
+                number: 5,
+                clue: 'Parte de un partido de tenis'
+            },
 
             // Verticales
-            { word: "GOLES", row: 0, col: 0, direction: "vertical", number: 1, clue: "Anotaciones en fútbol (plural)" },
-            { word: "SALTO", row: 0, col: 4, direction: "vertical", number: 2, clue: "Prueba de atletismo: ___ de longitud" }
+            {
+                word: 'GOLES',
+                row: 0,
+                col: 0,
+                direction: 'vertical',
+                number: 1,
+                clue: 'Anotaciones en fútbol (plural)'
+            },
+            {
+                word: 'SALTO',
+                row: 0,
+                col: 4,
+                direction: 'vertical',
+                number: 2,
+                clue: 'Prueba de atletismo: ___ de longitud'
+            }
         ]
     }
 ];

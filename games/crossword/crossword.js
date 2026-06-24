@@ -3,15 +3,15 @@
 // ========================================
 
 // --- ESTADO DEL JUEGO ---
-let currentPuzzle = null;        // Crucigrama activo
-let grid = [];                   // Array 2D con las letras del jugador
-let solutionGrid = [];           // Array 2D con las respuestas correctas
-let selectedCell = null;         // Celda seleccionada { row, col }
+let currentPuzzle = null; // Crucigrama activo
+let grid = []; // Array 2D con las letras del jugador
+let solutionGrid = []; // Array 2D con las respuestas correctas
+let selectedCell = null; // Celda seleccionada { row, col }
 let currentDirection = 'horizontal'; // Dirección activa
-let lastPuzzleIndex = -1;        // Para no repetir el crucigrama anterior
-let currentWordCells = [];       // Celdas de la palabra activa
-let startTime = null;            // Momento de inicio del juego (para puntuación)
-let revelations = 0;             // Número de veces que se usó "Revelar"
+let lastPuzzleIndex = -1; // Para no repetir el crucigrama anterior
+let currentWordCells = []; // Celdas de la palabra activa
+let startTime = null; // Momento de inicio del juego (para puntuación)
+let revelations = 0; // Número de veces que se usó "Revelar"
 
 // --- ELEMENTOS DEL DOM ---
 const gridContainer = document.getElementById('crossword-grid');
@@ -60,7 +60,7 @@ function buildGrid() {
 
             // Solo marcar si está dentro de los límites
             if (row < rows && col < cols) {
-                grid[row][col] = '';  // Celda escribible (vacía)
+                grid[row][col] = ''; // Celda escribible (vacía)
                 solutionGrid[row][col] = wordData.word[i]; // Letra correcta
             }
         }
@@ -121,9 +121,7 @@ function renderGrid() {
  * Obtiene el número de pista asignado a una celda (si es inicio de palabra)
  */
 function getCellNumber(row, col) {
-    const word = currentPuzzle.words.find(
-        (w) => w.row === row && w.col === col
-    );
+    const word = currentPuzzle.words.find((w) => w.row === row && w.col === col);
     return word ? word.number : null;
 }
 

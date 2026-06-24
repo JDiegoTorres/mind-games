@@ -69,7 +69,9 @@ body {
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.8rem;
-    transition: background 0.3s, border-color 0.3s;
+    transition:
+        background 0.3s,
+        border-color 0.3s;
 }
 
 .filter-btn:hover {
@@ -114,7 +116,10 @@ body {
     text-align: center;
     text-decoration: none;
     color: #ffffff;
-    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    transition:
+        transform 0.3s,
+        background 0.3s,
+        box-shadow 0.3s;
     cursor: pointer;
 }
 

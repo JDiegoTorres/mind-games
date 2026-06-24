@@ -106,7 +106,7 @@ function getTopScores(gameName, limit = 5) {
  * Menos movimientos = mejor puntuación
  */
 function calculateMemoryScore(moves) {
-    return Math.max(1000 - (moves * 50), 100);
+    return Math.max(1000 - moves * 50, 100);
 }
 
 /**
@@ -122,7 +122,7 @@ function calculateSimonScore(level) {
  * Menos tiempo y menos revelaciones = mejor puntuación
  */
 function calculateCrosswordScore(seconds, revelations) {
-    return Math.max(1000 - (seconds * 2) - (revelations * 200), 100);
+    return Math.max(1000 - seconds * 2 - revelations * 200, 100);
 }
 
 console.log('📊 Módulo de puntuación cargado');

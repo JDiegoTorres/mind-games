@@ -78,7 +78,10 @@
     border: none;
     border-radius: 16px;
     cursor: pointer;
-    transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+    transition:
+        opacity 0.2s,
+        transform 0.1s,
+        box-shadow 0.2s;
     opacity: 0.6;
 }
 
@@ -98,22 +101,22 @@
 }
 
 /* Colores de cada botón */
-.simon-btn[data-color="green"] {
+.simon-btn[data-color='green'] {
     background-color: #4caf50;
     color: #4caf50;
 }
 
-.simon-btn[data-color="red"] {
+.simon-btn[data-color='red'] {
     background-color: #f44336;
     color: #f44336;
 }
 
-.simon-btn[data-color="yellow"] {
+.simon-btn[data-color='yellow'] {
     background-color: #ffeb3b;
     color: #ffeb3b;
 }
 
-.simon-btn[data-color="blue"] {
+.simon-btn[data-color='blue'] {
     background-color: #2196f3;
     color: #2196f3;
 }

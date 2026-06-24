@@ -8,11 +8,11 @@ const EMOJIS = ['🐶', '🐱', '🐸', '🦊', '🐼', '🦁'];
 
 // --- ESTADO DEL JUEGO ---
 // Variables que guardan el estado actual del juego
-let cards = [];           // Array con todas las cartas
-let flippedCards = [];    // Cartas volteadas actualmente (máximo 2)
-let matchedPairs = 0;    // Parejas encontradas
-let moves = 0;           // Número de movimientos
-let isLocked = false;    // Bloquea clics mientras se voltean cartas
+let cards = []; // Array con todas las cartas
+let flippedCards = []; // Cartas volteadas actualmente (máximo 2)
+let matchedPairs = 0; // Parejas encontradas
+let moves = 0; // Número de movimientos
+let isLocked = false; // Bloquea clics mientras se voltean cartas
 
 // --- ELEMENTOS DEL DOM ---
 // "DOM" = Document Object Model, es cómo JavaScript accede al HTML

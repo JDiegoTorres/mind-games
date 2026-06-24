@@ -1,61 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎵 Simon Says - Mind Games</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="simon.css">
-</head>
-<body>
-    <header class="header">
-        <a href="../../index.html" class="back-link">← Volver</a>
-        <h1>🎵 Simon Says</h1>
-        <p>Repite la secuencia de colores</p>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🎵 Simon Says - Mind Games</title>
+        <link rel="stylesheet" href="../../css/styles.css" />
+        <link rel="stylesheet" href="simon.css" />
+    </head>
+    <body>
+        <header class="header">
+            <a href="../../index.html" class="back-link">← Volver</a>
+            <h1>🎵 Simon Says</h1>
+            <p>Repite la secuencia de colores</p>
+        </header>
 
-    <section class="game-info">
-        <div class="stat">
-            <span class="stat-label">Nivel</span>
-            <span class="stat-value" id="level-display">0</span>
+        <section class="game-info">
+            <div class="stat">
+                <span class="stat-label">Nivel</span>
+                <span class="stat-value" id="level-display">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Récord</span>
+                <span class="stat-value" id="best-display">0</span>
+            </div>
+            <button class="btn-restart" id="btn-start">▶️ Empezar</button>
+        </section>
+
+        <section class="simon-board" id="simon-board">
+            <button class="simon-btn" data-color="green" id="btn-green"></button>
+            <button class="simon-btn" data-color="red" id="btn-red"></button>
+            <button class="simon-btn" data-color="yellow" id="btn-yellow"></button>
+            <button class="simon-btn" data-color="blue" id="btn-blue"></button>
+        </section>
+
+        <p class="game-status" id="game-status">Pulsa "Empezar" para jugar</p>
+
+        <div class="lose-message" id="lose-message" hidden>
+            <h2>💥 ¡Fallaste!</h2>
+            <p>Llegaste al nivel <span id="final-level">0</span></p>
+            <p class="score-display">Puntuación: <span id="final-score">0</span></p>
+            <button class="btn-restart" id="btn-retry">Intentar de nuevo</button>
         </div>
-        <div class="stat">
-            <span class="stat-label">Récord</span>
-            <span class="stat-value" id="best-display">0</span>
-        </div>
-        <button class="btn-restart" id="btn-start">▶️ Empezar</button>
-    </section>
 
-    <section class="simon-board" id="simon-board">
-        <button class="simon-btn" data-color="green" id="btn-green"></button>
-        <button class="simon-btn" data-color="red" id="btn-red"></button>
-        <button class="simon-btn" data-color="yellow" id="btn-yellow"></button>
-        <button class="simon-btn" data-color="blue" id="btn-blue"></button>
-    </section>
-
-    <p class="game-status" id="game-status">Pulsa "Empezar" para jugar</p>
-
-    <div class="lose-message" id="lose-message" hidden>
-        <h2>💥 ¡Fallaste!</h2>
-        <p>Llegaste al nivel <span id="final-level">0</span></p>
-        <p class="score-display">Puntuación: <span id="final-score">0</span></p>
-        <button class="btn-restart" id="btn-retry">Intentar de nuevo</button>
-    </div>
-
-    <script src="../../js/scoring.js"></script>
-    <script>
-    if (typeof saveScore === 'undefined') {
-        const SCORES_KEY = 'mindgames_scores';
-        const PLAYER_KEY = 'mindgames_player';
-        function getPlayerName() { return localStorage.getItem(PLAYER_KEY); }
-        function saveScore(gameName, score, category, difficulty) {
-            const scores = JSON.parse(localStorage.getItem(SCORES_KEY) || '[]');
-            scores.push({ player: getPlayerName() || 'Anon', game: gameName, score: Math.max(score, 100), category, difficulty, date: new Date().toISOString() });
-            localStorage.setItem(SCORES_KEY, JSON.stringify(scores.slice(-50)));
-        }
-        function calculateSimonScore(level) { return level * 100; }
-    }
-    </script>
-    <script src="simon.js"></script>
-</body>
+        <script src="../../js/scoring.js"></script>
+        <script>
+            if (typeof saveScore === 'undefined') {
+                const SCORES_KEY = 'mindgames_scores';
+                const PLAYER_KEY = 'mindgames_player';
+                function getPlayerName() {
+                    return localStorage.getItem(PLAYER_KEY);
+                }
+                function saveScore(gameName, score, category, difficulty) {
+                    const scores = JSON.parse(localStorage.getItem(SCORES_KEY) || '[]');
+                    scores.push({
+                        player: getPlayerName() || 'Anon',
+                        game: gameName,
+                        score: Math.max(score, 100),
+                        category,
+                        difficulty,
+                        date: new Date().toISOString()
+                    });
+                    localStorage.setItem(SCORES_KEY, JSON.stringify(scores.slice(-50)));
+                }
+                function calculateSimonScore(level) {
+                    return level * 100;
+                }
+            }
+        </script>
+        <script src="simon.js"></script>
+    </body>
 </html>

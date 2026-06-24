@@ -30,10 +30,10 @@ inclusion: always
 - Mobile-first: diseñar para móvil y usar media queries para pantallas grandes
 - Usar flexbox o grid para layouts (nunca floats)
 - Paleta de colores base:
-  - Fondo: gradiente de #1a1a2e a #0f3460
-  - Texto: #ffffff
-  - Acento positivo: #81c784
-  - Acento interactivo: #667eea
+    - Fondo: gradiente de #1a1a2e a #0f3460
+    - Texto: #ffffff
+    - Acento positivo: #81c784
+    - Acento interactivo: #667eea
 
 ## JavaScript
 
@@ -63,6 +63,7 @@ inclusion: always
 ## Nuevos juegos
 
 Cuando se añada un juego nuevo:
+
 1. Crear carpeta en `games/nombre-del-juego/`
 2. Crear los 3 archivos (html, css, js)
 3. Añadir tarjeta en `index.html` dentro de `.games-grid`

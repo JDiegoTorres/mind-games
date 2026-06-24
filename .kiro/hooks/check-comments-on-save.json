@@ -1,15 +1,15 @@
 {
-  "version": "v1",
-  "hooks": [
-    {
-      "name": "Verificar comentarios en español",
-      "trigger": "PostFileSave",
-      "description": "Cuando se guarda un archivo JS, recuerda verificar que los comentarios siguen el estándar del proyecto (español).",
-      "matcher": "\\.(js)$",
-      "action": {
-        "type": "agent",
-        "prompt": "El usuario acaba de guardar un archivo JavaScript. Si hay cambios nuevos o si el usuario te pide revisarlo, verifica que los comentarios del código estén en español según los estándares del proyecto."
-      }
-    }
-  ]
+    "version": "v1",
+    "hooks": [
+        {
+            "name": "Verificar comentarios en español",
+            "trigger": "PostFileSave",
+            "description": "Cuando se guarda un archivo JS, recuerda verificar que los comentarios siguen el estándar del proyecto (español).",
+            "matcher": "\\.(js)$",
+            "action": {
+                "type": "agent",
+                "prompt": "El usuario acaba de guardar un archivo JavaScript. Si hay cambios nuevos o si el usuario te pide revisarlo, verifica que los comentarios del código estén en español según los estándares del proyecto."
+            }
+        }
+    ]
 }
