@@ -23,11 +23,16 @@ const filterDifficulty = document.getElementById('filter-difficulty');
  * Muestra el modal de nombre si no hay jugador registrado
  */
 function checkPlayer() {
-    const name = getPlayerName();
-    if (!name) {
+    try {
+        const name = getPlayerName();
+        if (!name) {
+            nameModal.hidden = false;
+        } else {
+            showGreeting(name);
+        }
+    } catch (e) {
+        // Si getPlayerName no existe o falla, mostrar modal
         nameModal.hidden = false;
-    } else {
-        showGreeting(name);
     }
 }
 

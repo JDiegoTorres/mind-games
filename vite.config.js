@@ -39,7 +39,12 @@ export default defineConfig({
                     'games/memory/memory.js',
                     'games/simon/simon.js',
                     'games/crossword/crossword.js',
-                    'games/crossword/puzzles.js'
+                    'games/crossword/puzzles.js',
+                    'games/memory/memory.css',
+                    'games/simon/simon.css',
+                    'games/crossword/crossword.css',
+                    'css/styles.css',
+                    'css/animations.css'
                 ];
 
                 filesToCopy.forEach((file) => {
