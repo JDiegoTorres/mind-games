@@ -1,0 +1,170 @@
+/* ========================================
+   ESTILOS DEL JUEGO SIMON SAYS
+   ======================================== */
+
+/* Enlace para volver */
+.back-link {
+    display: inline-block;
+    color: #81c784;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 0.7;
+}
+
+/* Información del juego */
+.game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-restart {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-restart:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   TABLERO DE SIMON (los 4 botones de colores)
+   ======================================== */
+.simon-board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 320px;
+    width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+/* ========================================
+   BOTONES DE COLORES
+   ======================================== */
+.simon-btn {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+    opacity: 0.6;
+}
+
+.simon-btn:hover {
+    opacity: 0.8;
+}
+
+.simon-btn:active {
+    transform: scale(0.95);
+}
+
+/* Estado activo: cuando se ilumina */
+.simon-btn.active {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px currentColor;
+}
+
+/* Colores de cada botón */
+.simon-btn[data-color="green"] {
+    background-color: #4caf50;
+    color: #4caf50;
+}
+
+.simon-btn[data-color="red"] {
+    background-color: #f44336;
+    color: #f44336;
+}
+
+.simon-btn[data-color="yellow"] {
+    background-color: #ffeb3b;
+    color: #ffeb3b;
+}
+
+.simon-btn[data-color="blue"] {
+    background-color: #2196f3;
+    color: #2196f3;
+}
+
+/* Deshabilitado mientras la máquina muestra la secuencia */
+.simon-btn.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* ========================================
+   ESTADO DEL JUEGO (texto informativo)
+   ======================================== */
+.game-status {
+    text-align: center;
+    padding: 1rem;
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   MENSAJE DE DERROTA
+   ======================================== */
+.lose-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(26, 26, 46, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lose-message h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.lose-message p {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .simon-board {
+        max-width: 260px;
+        padding: 1rem;
+    }
+}

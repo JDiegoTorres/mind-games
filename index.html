@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Mind Games</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🧠 Mind Games</h1>
+        <p>Entrena tu cerebro con juegos mentales</p>
+        <p class="player-greeting" id="player-greeting"></p>
+    </header>
+
+    <section class="filter-controls">
+        <span class="filter-label">Filtrar:</span>
+        <button class="filter-btn filter-btn--active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="memoria">🧠 Memoria</button>
+        <button class="filter-btn" data-filter="palabras">📝 Palabras</button>
+        <span class="filter-separator">|</span>
+        <span class="filter-label">Ordenar:</span>
+        <button class="filter-btn" data-sort="difficulty">Dificultad</button>
+        <button class="filter-btn filter-btn--scores" id="btn-toggle-scores">🏆 Clasificación</button>
+    </section>
+
+    <main class="games-grid" id="games-grid">
+        <a href="games/memory/memory.html" class="game-card" data-category="memoria" data-difficulty="1">
+            <span class="game-icon">🃏</span>
+            <h2>Memory</h2>
+            <p>Encuentra las parejas de cartas</p>
+            <span class="game-category">Memoria</span>
+            <span class="game-difficulty">Fácil</span>
+        </a>
+
+        <a href="games/simon/simon.html" class="game-card" data-category="memoria" data-difficulty="2">
+            <span class="game-icon">🎵</span>
+            <h2>Simon Says</h2>
+            <p>Repite la secuencia de colores</p>
+            <span class="game-category">Memoria</span>
+            <span class="game-difficulty">Medio</span>
+        </a>
+
+        <a href="games/crossword/crossword.html" class="game-card" data-category="palabras" data-difficulty="3">
+            <span class="game-icon">🧩</span>
+            <h2>Crucigrama</h2>
+            <p>Completa las palabras cruzadas</p>
+            <span class="game-category">Palabras</span>
+            <span class="game-difficulty">Difícil</span>
+        </a>
+
+        <div class="game-card game-card--locked" data-category="otros" data-difficulty="0">
+            <span class="game-icon">🔒</span>
+            <h2>Próximamente</h2>
+            <p>Más juegos en camino...</p>
+        </div>
+    </main>
+
+    <!-- Modal de nombre del jugador -->
+    <div class="modal-overlay" id="name-modal" hidden>
+        <div class="modal">
+            <h2>Bienvenido a Mind Games</h2>
+            <p>Ingresa tu nombre para guardar tus puntuaciones</p>
+            <input type="text" class="modal-input" id="player-name-input" placeholder="Tu nombre..." maxlength="20">
+            <button class="modal-btn" id="btn-save-name">Jugar</button>
+        </div>
+    </div>
+
+    <!-- Sección de clasificación -->
+    <section class="leaderboard" id="leaderboard" hidden>
+        <div class="leaderboard-header">
+            <h2>🏆 Clasificación</h2>
+            <div class="leaderboard-filters">
+                <select id="filter-category" class="leaderboard-select">
+                    <option value="">Todas las categorías</option>
+                    <option value="memoria">Memoria</option>
+                    <option value="palabras">Palabras</option>
+                </select>
+                <select id="filter-difficulty" class="leaderboard-select">
+                    <option value="">Todas las dificultades</option>
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Medio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+            </div>
+        </div>
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Jugador</th>
+                    <th>Juego</th>
+                    <th>Puntuación</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+            </tbody>
+        </table>
+        <p class="leaderboard-empty" id="leaderboard-empty" hidden>No hay puntuaciones todavía. ¡Juega para aparecer aquí!</p>
+    </section>
+
+    <footer class="footer">
+        <p>Hecho con ❤️ aprendiendo desarrollo web</p>
+    </footer>
+
+    <script src="js/scoring.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
