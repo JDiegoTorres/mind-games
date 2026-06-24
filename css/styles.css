@@ -96,6 +96,12 @@ body > *:not(.particles-canvas):not(.win-message):not(.lose-message):not(.modal-
     font-weight: 400;
 }
 
+/* Emoji en títulos: fuerza fuente del sistema para que se muestren */
+.game-title-icon {
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    font-style: normal;
+}
+
 /* ========================================
    CONTROLES DE FILTRADO
    ======================================== */
