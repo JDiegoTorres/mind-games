@@ -60,6 +60,21 @@ inclusion: always
 - Después de crear o modificar un crucigrama, "jugarlo" automáticamente: simular el llenado completo de cada palabra verificando que la solución sea coherente y que el juego se pueda completar sin contradicciones
 - Si durante la simulación se detecta cualquier error (letras que no coinciden, palabras que salen de la cuadrícula, pistas incoherentes), corregirlo de inmediato sin esperar a que el usuario lo pida
 
+## Comunicación con el usuario
+
+- El usuario está aprendiendo desarrollo web: siempre explicar el proceso paso a paso
+- Al usar una herramienta nueva o un comando nuevo, explicar qué hace, por qué se usa, y cuándo usarlo
+- No abrumar con información: una cosa a la vez, en orden lógico
+- Usar analogías simples cuando sea posible
+- Cuando se haga un cambio en el código, explicar brevemente qué se cambió y por qué
+
+## Herramientas de desarrollo
+
+- Al iniciar una sesión de trabajo, asegurar que el servidor de desarrollo (npm run dev) esté corriendo
+- Antes de dar por terminada una modificación, correr `npm run lint` para detectar errores
+- Antes de hacer commit, correr `npm run format` para asegurar formato consistente
+- Si lint o format reportan problemas, corregirlos automáticamente sin preguntarle al usuario
+
 ## Nuevos juegos
 
 Cuando se añada un juego nuevo:

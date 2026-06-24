@@ -1,0 +1,90 @@
+/* ========================================
+   ANIMACIONES - Mind Games
+   Keyframes y clases reutilizables para animaciones de entrada
+   ======================================== */
+
+/* --- KEYFRAMES --- */
+
+/* Aparece desde abajo con fade */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aparece desde arriba con slide */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Escala desde pequeño */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Brillo pulsante sutil (para bordes) */
+@keyframes glowPulse {
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(102, 126, 234, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(102, 126, 234, 0.25);
+    }
+}
+
+/* --- CLASES DE ANIMACIÓN --- */
+
+.animate-slide-down {
+    animation: slideDown 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+    opacity: 0;
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* --- DELAYS ESCALONADOS (para que las tarjetas aparezcan una tras otra) --- */
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+.delay-2 {
+    animation-delay: 0.2s;
+}
+.delay-3 {
+    animation-delay: 0.3s;
+}
+.delay-4 {
+    animation-delay: 0.4s;
+}
+.delay-5 {
+    animation-delay: 0.5s;
+}
+.delay-6 {
+    animation-delay: 0.6s;
+}

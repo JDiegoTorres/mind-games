@@ -1,0 +1,16 @@
+{
+    "version": "v1",
+    "hooks": [
+        {
+            "name": "Lint al guardar JS",
+            "trigger": "PostFileSave",
+            "description": "Ejecuta ESLint automáticamente al guardar un archivo JS para detectar errores temprano.",
+            "matcher": "\\.(js)$",
+            "action": {
+                "type": "command",
+                "command": "npx eslint --no-error-on-unmatched-pattern .",
+                "timeout": 30
+            }
+        }
+    ]
+}

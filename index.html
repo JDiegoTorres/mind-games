@@ -3,17 +3,49 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>🧠 Mind Games</title>
+        <title>🧠 Mind Games - Entrena tu cerebro</title>
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"
+        />
+
+        <!-- Meta tags para compartir (Open Graph) -->
+        <meta
+            name="description"
+            content="Colección de juegos mentales para entrenar tu cerebro. Memory, Simon Says, Crucigrama y más."
+        />
+        <meta property="og:title" content="Mind Games - Entrena tu cerebro" />
+        <meta
+            property="og:description"
+            content="Juegos mentales gratuitos: Memory, Simon Says, Crucigrama. ¡Pon a prueba tu mente!"
+        />
+        <meta property="og:type" content="website" />
+
+        <!-- Google Fonts: Space Grotesk (títulos) + Inter (cuerpo) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Estilos -->
         <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/animations.css" />
     </head>
     <body>
-        <header class="header">
+        <!-- Canvas de partículas (fondo animado) -->
+        <canvas id="particles-canvas" class="particles-canvas"></canvas>
+
+        <header class="header animate-slide-down">
             <h1>🧠 Mind Games</h1>
             <p>Entrena tu cerebro con juegos mentales</p>
             <p class="player-greeting" id="player-greeting"></p>
         </header>
 
-        <section class="filter-controls">
+        <section class="filter-controls animate-fade-in-up delay-1">
             <span class="filter-label">Filtrar:</span>
             <button class="filter-btn filter-btn--active" data-filter="todos">Todos</button>
             <button class="filter-btn" data-filter="memoria">🧠 Memoria</button>
@@ -29,7 +61,7 @@
         <main class="games-grid" id="games-grid">
             <a
                 href="games/memory/memory.html"
-                class="game-card"
+                class="game-card animate-fade-in-up delay-2"
                 data-category="memoria"
                 data-difficulty="1"
             >
@@ -42,7 +74,7 @@
 
             <a
                 href="games/simon/simon.html"
-                class="game-card"
+                class="game-card animate-fade-in-up delay-3"
                 data-category="memoria"
                 data-difficulty="2"
             >
@@ -55,7 +87,7 @@
 
             <a
                 href="games/crossword/crossword.html"
-                class="game-card"
+                class="game-card animate-fade-in-up delay-4"
                 data-category="palabras"
                 data-difficulty="3"
             >
@@ -66,7 +98,11 @@
                 <span class="game-difficulty">Difícil</span>
             </a>
 
-            <div class="game-card game-card--locked" data-category="otros" data-difficulty="0">
+            <div
+                class="game-card game-card--locked animate-fade-in-up delay-5"
+                data-category="otros"
+                data-difficulty="0"
+            >
                 <span class="game-icon">🔒</span>
                 <h2>Próximamente</h2>
                 <p>Más juegos en camino...</p>
@@ -75,7 +111,7 @@
 
         <!-- Modal de nombre del jugador -->
         <div class="modal-overlay" id="name-modal" hidden>
-            <div class="modal">
+            <div class="modal animate-scale-in">
                 <h2>Bienvenido a Mind Games</h2>
                 <p>Ingresa tu nombre para guardar tus puntuaciones</p>
                 <input
@@ -124,10 +160,11 @@
             </p>
         </section>
 
-        <footer class="footer">
+        <footer class="footer animate-fade-in-up delay-6">
             <p>Hecho con ❤️ aprendiendo desarrollo web</p>
         </footer>
 
+        <script src="js/particles.js"></script>
         <script src="js/scoring.js"></script>
         <script src="js/main.js"></script>
     </body>
